@@ -14,13 +14,13 @@ module.exports = function (grunt) {
             assets: 'assets',//输出的最终文件assets里面
             less: 'assets/css/less',//推荐使用Less
             css: 'assets/css', //若简单项目，可直接使用原生CSS，同样可以grunt watch:base进行监控
-            js: 'assets/js', //js文件相关目录
+            js: 'assets/scripts', //js文件相关目录
             img: 'assets/image' //图片相关
         },
         buildPaths: {
             build: 'build',
             css: 'build/css',
-            js: 'build/js',
+            js: 'build/scripts',
             img: 'build/assets/image'
         },
         buildType: 'Build',
@@ -176,10 +176,7 @@ module.exports = function (grunt) {
                 boss: true,
                 node: true
             },
-            globals: {
-                exports: true
-            },
-            files: ['<%= paths.js %>/*.js']
+            files: ['<%= paths.js %>/app/*.js']
         },
         less: {
             build: {

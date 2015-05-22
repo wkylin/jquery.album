@@ -76,7 +76,7 @@
                 $(desc).appendTo($albumPanel);
                 $panelText = $albumBox.find(".ui-panel-text");
                 $overlayPlace = $albumBox.find(".ui-overlay-place");
-                if (descPos == "bottom") {
+                if (descPos === "bottom") {
                     $panelText.css({"bottom": 0});
                     $overlayPlace.css({"bottom": 0});
                     if ($panelDigit) {
@@ -114,13 +114,13 @@
 
                 //Panel左右导航事件
                 $panelPrev.on("click", function () {
-                    if (index != 0) {
+                    if (index !== 0) {
                         showPrev();
                     }
                 });
 
                 $panelNext.on("click", function () {
-                    if (index != panelListSize - 1) {
+                    if (index !== panelListSize - 1) {
                         showNext();
                     }
                 });
@@ -153,13 +153,13 @@
 
                 //缩略图左右导航事件
                 $thumbsPrev.on("click", function () {
-                    if (index != 0) {
+                    if (index !== 0) {
                         showPrev();
                     }
                 });
 
                 $thumbsNext.on("click", function () {
-                    if (index != panelListSize - 1) {
+                    if (index !== panelListSize - 1) {
                         showNext();
                     }
                 });
@@ -190,7 +190,7 @@
 
             //导航Prev
             function showPrev() {
-                if (index == 0) {
+                if (index === 0) {
                     index = 1;
                 }
                 index--;
@@ -199,10 +199,10 @@
 
             //私有函数
             function showPanelItem(item) {
-                var $imgItem= $panelItem.eq(item).find("img")
+                var $imgItem= $panelItem.eq(item).find("img");
                 var alt = $imgItem.attr("alt");
                 var panelItemWidth = 0;
-                if (carouselMode == "fade") {
+                if (carouselMode === "fade") {
                     $panelItem.hide();
                     $imgItem.fadeIn().css({"opacity":1});
                     $panelItem.eq(item).fadeIn();
@@ -271,7 +271,6 @@
             isShow: true,
             fnPreviewAll: $.noop
         }
-
-    }
+    };
 
 })(jQuery);

@@ -33,13 +33,13 @@ $(function () {
                     fnScrollStop: function () {
                         $.winModal("hide");
                     }
-                })
+                });
             }
         }
     });
 
 
-    //ÎŞËõÂÔÍ¼Æ¬£¬×óÓÒÒÆ¶¯
+    //æ— ç¼©ç•¥å›¾ç‰‡ï¼Œå·¦å³ç§»åŠ¨
     $(".ui-carousel-no").wkAlbum({
         carouselMode: "shifting",
         thumbsList: {

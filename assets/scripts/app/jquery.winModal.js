@@ -18,7 +18,7 @@
             var scrollTop = $(win).scrollTop();
             var $that = null;
 
-            var uiShifting="";
+            var uiShifting;
             
             //组建DOM结构
             var modal = '<div class="ui-modal">' +
@@ -50,7 +50,7 @@
 
             uiShifting = '<div class="ui-album-box ui-carousel-shifting"><div class="ui-album-panel"><ul class="ui-panel-list">';
             for(var j= 0;j<imgArray.length;j++){
-                uiShifting+='<li><img src="'+ imgArray[j] +'" alt="'+ imgAltArray[j] +'"/></li>'
+                uiShifting+='<li><img src="'+ imgArray[j] +'" alt="'+ imgAltArray[j] +'"/></li>';
             }
             uiShifting += '</ul></div></div>';
 
@@ -65,7 +65,7 @@
                     $(".ui-modal-backdrop").on("click", function () {
                         $that.remove();
                         $(this).fadeOut().remove();
-                    })
+                    });
                 }
             }
 
@@ -93,8 +93,7 @@
         } else {
             $.error('Method' + method + 'does not exist on jQuery');
         }
-
-    }
+    };
 
 
     // 暴露插件的默认配置
@@ -104,6 +103,6 @@
         isShowBackdrop: true,
         hideByBackdrop: true,
         winParents:null
-    }
+    };
 
 })(jQuery,window);

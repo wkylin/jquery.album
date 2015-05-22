@@ -1,5 +1,5 @@
 ;
-(function ($) {
+(function ($,win) {
     $.fn.winScroll = function (options) {
 
         var settings = $.extend(true, {}, $.fn.winScroll.defaults, options);
@@ -11,25 +11,24 @@
 
             var scrollTimeout = null;
             var scrollHandler = null;
-            $(window).scroll(function () {
+            $(win).scroll(function () {
                 if (scrollTimeout) {
                     clearTimeout(scrollTimeout);
-                    scrollTimeout = null;
                 }
                 scrollTimeout = setTimeout(scrollHandler, timeRate);
             });
             scrollHandler = function () {
-                if ($(window).scrollTop() > scrollHeight) {
+                if ($(win).scrollTop() > scrollHeight) {
                     fnScrollStop();
                 }
             };
         });
     };
-    // ±©Â¶²å¼şµÄÄ¬ÈÏÅäÖÃ
+    // æš´éœ²æ’ä»¶çš„é»˜è®¤é…ç½®
     $.fn.winScroll.defaults = {
         scrollHeight: 300,
         timeRate:200,
         fnScrollStop: $.noop
-    }
+    };
 
-})(jQuery);
+})(jQuery,window);
