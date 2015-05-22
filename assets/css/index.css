@@ -1,0 +1,404 @@
+html,
+body
+{
+    font-family: 'STHeiti', 'Microsoft YaHei';
+}
+
+.demo
+{
+    margin: 20px auto;
+}
+
+.ui-album-box
+{
+    overflow: hidden;
+
+    margin: 0 auto;
+}
+
+.ui-album-panel
+{
+    position: relative;
+
+    overflow: hidden;
+
+    margin: 0 auto;
+
+    background-color: #fff;
+}
+
+.ui-carousel-fade .ui-album-panel
+{
+    width: 500px;
+    height: 375px;
+
+    border: 1px solid #dcdcdc;
+}
+.ui-carousel-shifting .ui-album-panel
+{
+    width: 780px;
+    height: 585px;
+
+    border: 0 none;
+}
+.ui-panel-list
+{
+    position: absolute;
+
+    display: table-cell;
+}
+.ui-panel-list li
+{
+    display: table-cell;
+    overflow: hidden;
+
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.ui-panel-list li img
+{
+    display: none;
+}
+
+.ui-panel-text
+{
+    font-size: 14px;
+    line-height: 40px;
+
+    position: absolute;
+    left: 0;
+
+    height: 40px;
+    padding: 0 15px;
+
+    color: #fff;
+}
+
+.ui-panel-digit
+{
+    font-size: 14px;
+    line-height: 40px;
+
+    position: absolute;
+    z-index: 100;
+    right: 10px;
+
+    height: 40px;
+
+    color: #fff;
+}
+
+.ui-panel-mutative,
+.ui-panel-amount
+{
+    padding: 0 2px;
+}
+
+.ui-panel-prev,
+.ui-panel-next
+{
+    font-size: 0;
+
+    position: absolute;
+
+    display: none;
+    overflow: hidden;
+
+    width: 40px;
+    height: 40px;
+
+    cursor: pointer;
+
+    background: url(img/jdt_btn.png) no-repeat;
+}
+
+.ui-panel-prev
+{
+    left: 15px;
+
+    background-position: 0 0;
+}
+
+.ui-panel-next
+{
+    right: 15px;
+
+    background-position: right 0;
+}
+
+.ui-panel-prev:hover
+{
+    background-position: 0 -51px;
+}
+
+.ui-panel-next:hover
+{
+    background-position: right -51px;
+}
+
+.ui-overlay-place
+{
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+    height: 40px;
+
+    opacity: .5;
+    background-color: #4f4d4b;
+}
+
+/* 缩略图 */
+
+.ui-album-thumbs
+{
+    position: relative;
+
+    overflow: hidden;
+
+    width: 500px;
+    height: 94px;
+    margin: 0 auto;
+}
+
+.ui-thumbs-list
+{
+    margin: 0;
+    padding: 0;
+}
+
+.ui-thumbs-list li
+{
+    display: table-cell;
+    overflow: hidden;
+
+    width: 124px;
+    height: 70px;
+    margin-right: 1px;
+    padding: 0;
+
+    cursor: pointer;
+    text-align: center;
+
+    border: 2px solid #fff;
+}
+
+.ui-thumbs-list li img
+{
+    max-width: 120px;
+    max-height: 90px;
+}
+
+.ui-thumbs-list .ui-thumbs-active
+{
+    border: 2px solid #009ef3;
+}
+
+.ui-thumbs-prev,
+.ui-thumbs-next
+{
+    font-size: 0;
+
+    position: absolute;
+    top: 0;
+
+    overflow: hidden;
+
+    width: 30px;
+    height: 94px;
+    margin: 0;
+    padding: 0;
+
+    cursor: pointer;
+
+    background: url(img/jdt_btn.png) no-repeat;
+}
+
+.ui-thumbs-prev
+{
+    left: 0;
+
+    background-position: 0 -102px;
+}
+
+.ui-thumbs-prev:hover
+{
+    background-position: 0 -204px;
+}
+
+.ui-thumbs-next
+{
+    right: 0;
+
+    background-position: right -102px;
+}
+
+.ui-thumbs-next:hover
+{
+    background-position: right -204px;
+}
+
+/* .ui-modal */
+.ui-modal
+{
+    position: absolute;
+    z-index: 99999;
+    top: 20px;
+    left: 50%;
+
+    display: none;
+
+    margin-left: -530px;
+}
+
+.ui-modal .ui-modal-title
+{
+    font-size: 22px;
+    font-weight: normal;
+    line-height: 58px;
+
+    height: 58px;
+
+    color: #fff;
+}
+
+.ui-modal .ui-modal-close
+{
+    font-size: 0;
+    line-height: 0;
+
+    position: absolute;
+    top: 16px;
+    right: 0;
+
+    width: 32px;
+    height: 32px;
+
+    cursor: pointer;
+
+    background: url(img/cx-close.png);
+}
+
+.ui-modal .ui-modal-close:hover
+{
+    position: absolute;
+    top: 16px;
+    right: 0;
+
+    width: 32px;
+    height: 32px;
+
+    cursor: pointer;
+
+    background: url(img/cx-close_hover.png);
+}
+
+.ui-modal .ui-modal-body
+{
+    overflow: hidden;
+
+    width: 1060px;
+    height: 585px;
+
+    background: #fff;
+}
+
+.ui-modal-backdrop
+{
+    position: absolute;
+    z-index: 99998;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    opacity: .8;
+    background: #000;
+
+    filter: alpha(opacity=80);
+}
+
+
+/* .ui-tabs */
+.ui-tabs
+{
+    display: none;
+}
+.ui-tabs .ui-tabs-list
+{
+    float: left;
+
+    width: 278px;
+    height: 585px;
+}
+
+.ui-tabs .ui-tabs-title
+{
+    font-size: 16px;
+    line-height: 60px;
+
+    height: 60px;
+    padding-left: 30px;
+
+    color: #555;
+    background: #efefef;
+}
+
+.ui-tabs .ui-tabs-list .ui-tabs-sub-item
+{
+    font-size: 16px;
+    line-height: 50px;
+
+    position: relative;
+
+    height: 50px;
+    padding: 0 30px;
+
+    cursor: pointer;
+
+    color: #555;
+    border-bottom: 1px solid #ccc;
+}
+
+.ui-tabs .ui-tabs-list .ui-tabs-sub-active
+{
+    color: #1f9bde;
+}
+
+.ui-tabs .ui-tabs-list .ui-tabs-sub-active:before
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 4px;
+    height: 50px;
+
+    content: '';
+
+    background: #1f9bde;
+}
+
+.ui-tabs .ui-tabs-list .ui-sub-item-title
+{
+    font-weight: normal;
+
+    float: left;
+}
+
+.ui-tabs .ui-tabs-list span
+{
+    float: right;
+}
+.ui-tabs .ui-tabs-content
+{
+    float: left;
+
+    width: 780px;
+    height: 100%;
+
+    border-left: 2px solid #ccc;
+}
