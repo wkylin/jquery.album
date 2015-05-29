@@ -9,16 +9,17 @@
         var timeRate = settings.timeRate;
         return this.each(function () {
 
+            var $this= $(this);
             var scrollTimeout = null;
             var scrollHandler = null;
-            $(win).scroll(function () {
+            $this.scroll(function () {
                 if (scrollTimeout) {
                     clearTimeout(scrollTimeout);
                 }
                 scrollTimeout = setTimeout(scrollHandler, timeRate);
             });
             scrollHandler = function () {
-                if ($(win).scrollTop() > scrollHeight) {
+                if ($this.scrollTop() >= scrollHeight) {
                     fnScrollStop();
                 }
             };

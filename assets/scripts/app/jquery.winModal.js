@@ -19,7 +19,7 @@
             var $that = null;
 
             var uiShifting;
-            
+
             //组建DOM结构
             var modal = '<div class="ui-modal">' +
                 '<div class="ui-modal-content">' +
@@ -29,34 +29,60 @@
                 '<div class="ui-modal-body">' +
                 '</div></div></div>';
 
-
+            //DOM
             $(modal).appendTo($("body"));
             $(modalBody).clone().appendTo($(".ui-modal-body"));
 
-
-               
-
-
+            //GET DOM
             $that = $(".ui-modal");
+            var $tabsContent= $that.find(".ui-tabs-content");
+            var $albumBox= winParents.parents("body").find(".ui-album-box");
+            var ids = winParents.data("index");
+
+            $albumBox.each(function(i){
+
+                var $img = $albumBox.eq(i).find(".ui-panel-list img");
+
+                var imgArray = [], imgAltArray = [];
+
+                $img.each(function (i, item) {
+                    imgArray[i] = $(item).attr("src");
+                    imgAltArray[i] = $(item).attr("alt");
+                });
+
+                uiShifting = '<div class="ui-tabs-content-item"><div class="ui-album-box ui-carousel-shifting"><div class="ui-album-panel"><ul class="ui-panel-list">';
+                for (var j = 0; j < imgArray.length; j++) {
+                    uiShifting += '<li><img src="' + imgArray[j] + '" alt="' + imgAltArray[j] + '"/></li>';
+                }
+                uiShifting += '</ul></div></div></div>';
+
+                $(uiShifting).appendTo($tabsContent);
+            });
+
+            //增加当时Class
+            $that.find(".ui-tabs-sub-item").each(function(){
+                var $this=$(this);
+                var index= $this.data("index");
+                if(index===ids){
+                    $this.addClass("ui-tabs-sub-active");
+                }
+                $this.find("span").text($albumBox.eq(index).find(".ui-panel-list img").size());
+            });
+
+            //显示
             $that.css({"top": scrollTop}).fadeIn(function () {
-                $(".ui-modal-body").find(".ui-tabs").show();
+                $that.find(".ui-tabs-content-item").eq(ids).show();
+                $that.find(".ui-tabs").show();
             });
 
-            var imgArray=[],imgAltArray=[];
-            winParents.find(".ui-panel-list img").each(function(i,item){
-                imgArray[i] = $(item).attr("src");
-                imgAltArray[i] = $(item).attr("alt");
+
+            //TABS ITEM 显示与隐藏
+            $that.on("click",".ui-tabs-sub-item",function(){
+                $that.find(".ui-tabs-sub-item").removeClass("ui-tabs-sub-active");
+                $(this).addClass("ui-tabs-sub-active");
+                $that.find(".ui-tabs-content-item").hide();
+                $that.find(".ui-tabs-content-item").eq($(this).data("index")).show();
             });
-
-            uiShifting = '<div class="ui-album-box ui-carousel-shifting"><div class="ui-album-panel"><ul class="ui-panel-list">';
-            for(var j= 0;j<imgArray.length;j++){
-                uiShifting+='<li><img src="'+ imgArray[j] +'" alt="'+ imgAltArray[j] +'"/></li>';
-            }
-            uiShifting += '</ul></div></div>';
-
-            $(uiShifting).appendTo($that.find(".ui-tabs-content-item"));
-
-
 
             //增加背景幕
             if (showBackdrop) {

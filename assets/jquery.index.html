@@ -18,7 +18,7 @@
 <body>
     <div class="demo">
         <!-- ui-album-box first -->
-        <div class="ui-album-box ui-carousel-fade">
+        <div class="ui-album-box ui-carousel-fade" data-index="0">
             <div class="ui-album-panel">
                 <ul class="ui-panel-list">
                     <li><img alt="一汽大众奥迪1" src="image/demo/pic_s01.jpg" /></li>
@@ -33,7 +33,7 @@
     </div>
     <div class="demo">
         <!-- ui-album-box second -->
-        <div class="ui-album-box ui-carousel-fade">
+        <div class="ui-album-box ui-carousel-fade" data-index="1">
             <div class="ui-album-panel">
                 <ul class="ui-panel-list">
                     <li><img alt="一汽大众奥迪7" src="image/demo/pic_s04.jpg" /></li>
@@ -44,11 +44,16 @@
     </div>
     <div class="demo">
         <!-- ui-album-box third -->
-        <div class="ui-album-box ui-carousel-no">
+        <div class="ui-album-box ui-carousel-fade" data-index="2">
             <div class="ui-album-panel">
                 <ul class="ui-panel-list">
-                    <li><img alt="一汽大众奥迪9" src="image/demo/pic_s07.jpg" /></li>
-                    <li><img alt="一汽大众奥迪10" src="image/demo/pic_s06.jpg" /></li>
+                    <li><img alt="一汽大众奥迪7" src="image/demo/pic_s07.jpg" /></li>
+                    <li><img alt="一汽大众奥迪6" src="image/demo/pic_s06.jpg" /></li>
+                    <li><img alt="一汽大众奥迪5" src="image/demo/pic_s05.jpg" /></li>
+                    <li><img alt="一汽大众奥迪4" src="image/demo/pic_s04.jpg" /></li>
+                    <li><img alt="一汽大众奥迪3" src="image/demo/pic_s03.jpg" /></li>
+                    <li><img alt="一汽大众奥迪2" src="image/demo/pic_s02.jpg" /></li>
+                    <li><img alt="一汽大众奥迪1" src="image/demo/pic_s01.jpg" /></li>
                 </ul>
             </div>
         </div>
@@ -59,36 +64,41 @@
             <div class="ui-tabs-item">
                 <div class="ui-tabs-title">整车</div>
                 <ul class="ui-tabs-sub-list">
-                    <li class="ui-tabs-sub-item ui-tabs-sub-active">
+                    <li class="ui-tabs-sub-item" data-index="0">
                         <div class="ui-sub-item-title">外观</div>
-                        <span>6</span>
+                        <span>0</span>
                     </li>
                 </ul>
             </div>
             <div class="ui-tabs-item">
                 <div class="ui-tabs-title">损伤部分</div>
                 <ul class="ui-tabs-sub-list">
-                    <li class="ui-tabs-sub-item">
+                    <li class="ui-tabs-sub-item" data-index="1">
                         <div class="ui-sub-item-title">骨架损伤</div>
-                        <span>2</span>
+                        <span>0</span>
+                    </li>
+                    <li class="ui-tabs-sub-item" data-index="2">
+                        <div class="ui-sub-item-title">内饰损伤</div>
+                        <span>0</span>
                     </li>
                 </ul>
             </div>
         </div>
         <div class="ui-tabs-content">
-            <div class="ui-tabs-content-item"></div>
+
         </div>
     </div>
+
     <div style="height:1000px; color:#fff;">占位符</div>
 
-    <script type="text/javascript" data-main="scripts/app/main" src="scripts/libs/require.js"></script>
+    <!--<script type="text/javascript" data-main="scripts/app/main" src="scripts/libs/require.js"></script>-->
 
     <!-- build:js scripts/app.js -->
-    <!--<script type="text/javascript" src="scripts/libs/jquery-1.11.2.min.js"></script>
+    <script type="text/javascript" src="scripts/libs/jquery-1.11.2.min.js"></script>
     <script type="text/javascript" src="scripts/app/jquery.wkAlbum.js"></script>
     <script type="text/javascript" src="scripts/app/jquery.winModal.js"></script>
     <script type="text/javascript" src="scripts/app/jquery.winScroll.js"></script>
-    <script type="text/javascript" src="scripts/app/app.js"></script>-->
+    <script type="text/javascript" src="scripts/app/app.js"></script>
     <!-- endbuild -->
 </body>
 </html>

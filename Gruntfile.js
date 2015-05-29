@@ -235,7 +235,7 @@ module.exports = function (grunt) {
         //按照预定义的排序格式重新排列CSS中定义的属性
         csscomb: {
             options: {
-                config: 'assets/js/libs/csscomb.json'
+                config: 'assets/scripts/libs/csscomb.json'
             },
             files: {
                 expand: true,
